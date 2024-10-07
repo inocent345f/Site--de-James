@@ -199,7 +199,7 @@ body.dark-mode {
 
 /*Gestion de la responsivité*/
 
-@media (max-width: 400px) {
+@media (max-width: 800px) {
     body {
         flex-direction: column;
         padding: 10px; 

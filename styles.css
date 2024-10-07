@@ -1,0 +1,248 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Arial', sans-serif;
+    background-color: #ffd7c4;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    z-index: -1;
+    transition: 0.3s;
+    width: 100vw;
+    transition: background-color 0.3s, color 0.3s;
+}
+.card{
+    background-color:  #c4d7ff;
+    width: 550px;
+    position: relative;
+    text-align: center;
+    padding: 20px;
+    height: auto;
+    border-radius: 20px;
+    
+}
+.imgcard{
+    background-color:#D3D3D3 ;
+    height: 450px;
+    border: 1px solid #000;
+    padding: auto;
+    text-align: center; 
+    align-items: center;
+    display: flex ;
+    justify-content: center;
+    border-style: dashed;
+    border-radius: 10px;
+}
+.imgcard img{
+    width: 50px;
+    padding-right: 10px;
+    margin-right: 10px;
+}
+.imginput:focus{
+    outline: none   ;
+}
+
+.importimg{
+    
+    text-align: center;
+    justify-content: center;
+    position:relative;
+    align-items: center;
+    display: flex;
+    border: 1px;
+    font-weight: 800;
+    height: 40px;
+    background-color: blue;
+    margin: 20px;  
+    border-radius: 20px;
+    cursor: pointer;
+    color: #ccbebe;
+
+}
+
+.exportimg{
+    text-align: center;
+    display: inline-flex;
+    background-color: #87a2ff;
+    border-radius: 20px;
+    height: 30px;
+    align-items: center;
+    padding: 20px;
+    font-weight: 800;
+    cursor: pointer;
+    color: #696262;
+}
+
+.exportimg:hover, .importimg:hover{
+    color: white;
+}
+
+/*pour le dark mode*/
+.darkmode{
+    position: absolute; /* Positionne l'élément de manière absolue */
+    top: 20px; /* Ajustez la distance par rapport au haut */
+    right: 20px; /* Ajustez la distance par rapport à la droite */
+    z-index: 1000; /* Assurez-vous qu'il est au-dessus des autres éléments */
+}
+
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+label {
+    width: 195px; /* Réduit la largeur */
+    height: 60px; /* Réduit la hauteur */
+    bottom: 10px;
+    position: relative;
+    display: block;
+    background: #ebebeb;
+    border-radius: 60px; /* Ajuste le rayon pour un aspect arrondi */
+    box-shadow: inset 0px 5px 15px rgba(0,0,0,0.4), inset 0px -5px 15px rgba(255,255,255,0.4);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+label:after {
+    content: "";
+    width: 50px; /* Réduit la largeur */
+    height: 50px; /* Réduit la hauteur */
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background: linear-gradient(180deg,#ffcc89,#d8860b);
+    border-radius: 60px; /* Ajuste le rayon pour un aspect arrondi */
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+input {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+input:checked + label {
+    background: #242424;
+}
+
+input:checked + label:after {
+    left: 187px; /* Ajuste la position après le changement d'état */
+    transform: translateX(-100%);
+    background: linear-gradient(180deg,#777,#3a3a3a);
+}
+
+label:active:after {
+    width: 70px; /* Réduit la largeur lors de l'activation */
+}
+
+input:checked + label + body {
+    background:#242424;
+}
+
+label svg {
+    position: absolute;
+    width: 45px; /* Réduit la taille des SVG */
+    top: 6px; /* Ajuste la position verticale */
+    z-index: 100;
+}
+
+label svg.sun {
+    left: 7px; /* Ajuste la position horizontale */
+    fill:#fff;
+    transition: 0.3s;
+}
+
+label svg.moon {
+    left: 140px; /* Ajuste la position horizontale */
+    fill:#7e7e7e;
+    transition: 0.3s;
+}
+
+input:checked + label svg.sun {
+    fill:#7e7e7e;
+}
+
+input:checked + label svg.moon {
+    fill:#fff;
+}
+
+body.dark-mode {
+    background-color: #242424; /* Couleur de fond sombre */
+    color: #ffffff; /* Couleur du texte sombre */
+}
+
+.card.dark-mode {
+    background-color: #333333; /* Couleur de fond de la carte en mode sombre */
+}
+
+.imgcard.dark-mode {
+    background-color: #444444; /* Couleur de fond de l'image en mode sombre */
+}
+
+.importimg.dark-mode {
+    background-color: #46586b; /* Couleur de fond du bouton d'importation en mode sombre */
+}
+
+.exportimg.dark-mode {
+    background-color: #6e96be; /* Couleur de fond du bouton d'exportation en mode sombre */
+}
+
+/*Gestion de la responsivité*/
+
+@media (max-width: 600px) {
+    body {
+        flex-direction: column;
+        padding: 10px; 
+    }
+    
+    .card {
+        width: 100%; 
+        padding: 10px; 
+    }
+
+    .imgcard {
+        height: 250px; 
+    }
+    .imgcard img {
+        width: 30px;
+    }
+
+    .importimg, .exportimg {
+        height: 30px;
+        font-size: 12px; 
+        padding: 10px; 
+    }
+
+    label {
+        width: 150px;
+        height: 40px;
+    }
+
+    label:after {
+        width: 30px;
+        height: 30px;
+    }
+
+    label svg {
+        width: 30px; 
+        top: 5px; 
+    }
+
+    label svg.sun {
+        left: 5px; 
+    }
+
+    label svg.moon {
+        left: 110px; 
+    }
+}
